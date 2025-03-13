@@ -6,22 +6,26 @@ body{
 }
 
 .App {
+  position: absolute;
   text-align: center;
   justify-content: center;
   align-items: center;
   color: white;
   background-color: rgb(133, 133, 216);
+  top: 0;
+  width: 100vw;
 }
 .title{
   font-family: 'Pokemon Solid', sans-serif;
   letter-spacing: 2.3px;      
   color: yellow;
   text-shadow: 2.2px 2.2px 0 navy, -2px -2px 0 navy, 2px -2px 0 navy, -2px 2px 0 navy;
-  font-size: 2.5rem;                             
+  font-size: 2.5rem;
+  margin-top: 40px;                            
 }
 
 .pokemon-buttons{
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .submit{
