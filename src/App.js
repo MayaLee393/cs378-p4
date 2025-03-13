@@ -49,7 +49,7 @@ function App() {
 
       <div className="pokemon-buttons">
         {pokemonList.map((pokemon, index) => (
-          <button key={index} onClick={() => handlePokemonChange(pokemon)}>
+          <button key={index} onClick={() => handlePokemonChange(pokemon)} className='poke-button btn btn-light mb-2'>
             {pokemon.charAt(0).toUpperCase() + pokemon.slice(1)}
           </button>
         ))}
