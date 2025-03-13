@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Pokemon from './Pokemon';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   // Default Pokémon list with Shaymin, Marill, and Mew
@@ -44,7 +45,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Pokemon Lookup</h1>
+      <h1 className="title">Pokemon Lookup</h1>
 
       <div className="pokemon-buttons">
         {pokemonList.map((pokemon, index) => (
@@ -54,14 +55,13 @@ function App() {
         ))}
       </div>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          className="name_input"
-          value={searchInput} 
-          onChange={handleInputChange}
-          placeholder="Enter Pokémon Name"
-        />
-        <button type="submit">+</button>
+      <form onSubmit={handleSubmit} className="form d-flex align-items-center">
+        <div className="form-group mb-2">
+          <label className="sr-only">Enter Pokemon Name</label>
+          <input className="name_input form-control" value={searchInput} onChange={handleInputChange} id="inputPokemon"placeholder='marill'/>
+
+        </div>
+        <button type="submit" className='submit btn btn-primary mb-2'>+</button>
       </form>
 
       <Pokemon name={selectedPokemon} />

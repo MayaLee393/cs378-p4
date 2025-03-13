@@ -42,8 +42,9 @@ const Pokemon = ({ name }) => {
 
     return (
         <div>
-            <h1>{name.charAt(0).toUpperCase() + name.slice(1).toLowerCase().trim()}</h1>
-            <div className="pokemon-types">
+            <h1 >{name.charAt(0).toUpperCase() + name.slice(1).toLowerCase().trim()}</h1>
+            <hr style={{width: "90vw", marginLeft: "auto", marginRight: "auto", backgroundColor: "navy", height: "5px" }}></hr>
+            <div className="section pokemon-types">
                 <h2 style={{ textAlign: "center" }}>Type(s):</h2>
                 <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px" }}>
                     {data.types.map((type_elem, index) => (
@@ -53,25 +54,25 @@ const Pokemon = ({ name }) => {
                     ))}
                 </div>
             </div>
+
             {data && (
                 <>
-                    <div className="pokemon-stats">
+                    <div className="section pokemon-stats">
                         <h2>Base Stats</h2>
-
                         <ResponsiveContainer width="90%" height={300}>
                             <BarChart data={statsData} margin={{ top: 10, right: 30, left: 20, bottom: 50 }}>
                                 <CartesianGrid strokeDasharray="3 3" />
                                 <XAxis dataKey="name" angle={-45} textAnchor="end" height={60} />
                                 <YAxis domain={[0, 255]} />
                                 <Tooltip />
-                                <Bar dataKey="value" fill="#8884d8">
+                                <Bar dataKey="value" fill="yellow">
                                     <LabelList dataKey="value" position="top" />
                                 </Bar>
                             </BarChart>
                         </ResponsiveContainer>
                     </div>
 
-                    <div className="pokemon-abilities">
+                    <div className="section pokemon-abilities">
                         <h2>Abilities</h2>
                         {data.abilities.map((ability_elem, index) => (
                             <p key={index}>{ability_elem.ability.name}</p>
